@@ -4,36 +4,36 @@
 
 ##  About The Project
 
-While major social media platforms are powerful, their closed-source and complex nature makes it difficult for developers to learn how they work[cite: 29]. This project aims to bridge that gap by offering a simplified, functional clone that demonstrates key features using a modern tech stack.
+While major social media platforms are powerful, their closed-source and complex nature makes it difficult for developers to learn how they work. This project aims to bridge that gap by offering a simplified, functional clone that demonstrates key features using a modern tech stack.
 
-The application allows users to register, create posts with images or videos, and interact with other users through likes, comments, and a follow system[cite: 36, 37, 39]. The user feed is personalized and features infinite scrolling for a seamless browsing experience[cite: 40, 41].
+The application allows users to register, create posts with images or videos, and interact with other users through likes, comments, and a follow system. The user feed is personalized and features infinite scrolling for a seamless browsing experience.
 
-## 的核心功能 (Core Features)
+## Core Features
 
-* **User Authentication**: Secure sign-up, log-in, and session management powered by Appwrite[cite: 82].
-* **Profile Management**: Users can create and edit their profiles, including updating their bio and profile picture[cite: 83].
-* **Content Posting**: Create posts with captions, requiring an image or video upload[cite: 84].
-* **Personalized Feed**: The home feed displays the latest posts from users you follow[cite: 85].
-* **User Interaction**: Like posts, leave comments, and follow or unfollow other users to customize your feed[cite: 86, 87].
-* **Infinite Scrolling**: The feed automatically loads more posts as you scroll down, ensuring a smooth user experience[cite: 87].
-* **Responsive UI**: A clean, modern, and fully responsive interface built with Tailwind CSS and shadcn/ui[cite: 88].
+* **User Authentication**: Secure sign-up, log-in, and session management powered by Appwrite.
+* **Profile Management**: Users can create and edit their profiles, including updating their bio and profile picture.
+* **Content Posting**: Create posts with captions, requiring an image or video upload.
+* **Personalized Feed**: The home feed displays the latest posts from users you follow.
+* **User Interaction**: Like posts, leave comments, and follow or unfollow other users to customize your feed.
+* **Infinite Scrolling**: The feed automatically loads more posts as you scroll down, ensuring a smooth user experience.
+* **Responsive UI**: A clean, modern, and fully responsive interface built with Tailwind CSS and shadcn/ui.
 
 ## 🛠️ Tech Stack
 
 The project leverages a modern, scalable tech stack for both the frontend and backend.
 
 ### Frontend
-* **React.js** [cite: 92]
-* **TypeScript** [cite: 93]
-* **Vite** [cite: 102]
-* **Tailwind CSS** [cite: 94]
-* **shadcn/ui** [cite: 95]
+* **React.js** 
+* **TypeScript** 
+* **Vite** 
+* **Tailwind CSS** 
+* **shadcn/ui** 
 
 ### Backend (BaaS)
-* **Appwrite**: Used for all backend services[cite: 97].
-    * **Authentication**: Manages user sign-up, login, and sessions[cite: 98].
-    * **Database**: Stores data for users, posts, comments, and likes[cite: 99].
-    * **Storage**: Handles all image and video file uploads[cite: 100].
+* **Appwrite**: Used for all backend services.
+    * **Authentication**: Manages user sign-up, login, and sessions.
+    * **Database**: Stores data for users, posts, comments, and likes.
+    * **Storage**: Handles all image and video file uploads.
 
 ## Limitations
 
