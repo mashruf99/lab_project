@@ -28,9 +28,8 @@ import {
 } from "@/lib/appwrite/api";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
 
-// ============================================================
+
 // AUTH QUERIES
-// ============================================================
 
 export const useCreateUserAccount = () => {
   return useMutation({
@@ -51,10 +50,9 @@ export const useSignOutAccount = () => {
   });
 };
 
-// ============================================================
-// POST QUERIES
-// ============================================================
 
+
+// POST QUERIES
 export const useGetPosts = () => {
   return useInfiniteQuery({
     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
@@ -64,8 +62,6 @@ export const useGetPosts = () => {
       if (lastPage && lastPage.documents.length === 0) {
         return null;
       }
-
-      // Use the $id of the last document as the cursor.
       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
       return lastId;
     },
@@ -204,10 +200,8 @@ export const useDeleteSavedPost = () => {
   });
 };
 
-// ============================================================
-// USER QUERIES
-// ============================================================
 
+// USER QUERIES
 export const useGetCurrentUser = () => {
   return useQuery({
     queryKey: [QUERY_KEYS.GET_CURRENT_USER],
@@ -243,4 +237,6 @@ export const useUpdateUser = () => {
       });
     },
   });
+
+  
 };

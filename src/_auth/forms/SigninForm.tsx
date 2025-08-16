@@ -21,9 +21,13 @@ import { useSignInAccount } from "@/lib/react-query/queries";
 import { useUserContext } from "@/context/AuthContext";
 
 const SigninForm = () => {
+
+  // Context
   const { toast } = useToast();
   const navigate = useNavigate();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
+
+
 
   // Query
   const { mutateAsync: signInAccount, isLoading } = useSignInAccount();
@@ -36,6 +40,9 @@ const SigninForm = () => {
     },
   });
 
+
+
+  // Form submission handler
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
     const session = await signInAccount(user);
 
@@ -57,6 +64,10 @@ const SigninForm = () => {
     }
   };
 
+
+
+
+// Render the form
   return (
     <Form {...form}>
       <div className="min-h-screen w-full bg-white text-black relative">

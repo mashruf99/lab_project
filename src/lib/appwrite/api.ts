@@ -16,7 +16,6 @@ export async function createUserAccount(user: INewUser) {
     );
 
     if (!newAccount) throw Error;
-
     const avatarUrl = avatars.getInitials(user.name);
 
     const newUser = await saveUserToDB({
@@ -82,9 +81,7 @@ export async function getAccount() {
 export async function getCurrentUser() {
   try {
     const currentAccount = await getAccount();
-
     if (!currentAccount) throw Error;
-
     const currentUser = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.userCollectionId,
@@ -104,7 +101,6 @@ export async function getCurrentUser() {
 export async function signOutAccount() {
   try {
     const session = await account.deleteSession("current");
-
     return session;
   } catch (error) {
     console.log(error);
@@ -118,16 +114,13 @@ export async function createPost(post: INewPost) {
   try {
     // Upload file to appwrite storage
     const uploadedFile = await uploadFile(post.file[0]);
-
     if (!uploadedFile) throw Error;
-
     // Get file url
     const fileUrl = getFilePreview(uploadedFile.$id);
     if (!fileUrl) {
       await deleteFile(uploadedFile.$id);
       throw Error;
     }
-
     // Convert tags into array
     const tags = post.tags?.replace(/ /g, "").split(",") || [];
 
@@ -288,7 +281,6 @@ export async function updatePost(post: IUpdatePost) {
 
     // Convert tags into array
     const tags = post.tags?.replace(/ /g, "").split(",") || [];
-
     //  Update post
     const updatedPost = await databases.updateDocument(
       appwriteConfig.databaseId,
@@ -309,11 +301,9 @@ export async function updatePost(post: IUpdatePost) {
       if (hasFileToUpdate) {
         await deleteFile(image.imageId);
       }
-
       // If no new file uploaded, just throw error
       throw Error;
     }
-
     // Safely delete old file after successful update
     if (hasFileToUpdate) {
       await deleteFile(post.imageId);
@@ -439,9 +429,8 @@ export async function getRecentPosts() {
   }
 }
 
-// 
+
 // USER
-// 
 
 //  GET USERS
 export async function getUsers(limit?: number) {
@@ -520,9 +509,7 @@ export async function updateUser(user: IUpdateUser) {
       }
     );
 
-    // Failed to update
     if (!updatedUser) {
-      // Delete new file that has been recently uploaded
       if (hasFileToUpdate) {
         await deleteFile(image.imageId);
       }
